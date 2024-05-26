@@ -1,7 +1,7 @@
-use std::fs::{File, OpenOptions};
+use std::fs::OpenOptions;
 use std::io;
 use std::io::Write;
-use std::path::{PathBuf};
+use std::path::PathBuf;
 
 pub mod windows;
 
