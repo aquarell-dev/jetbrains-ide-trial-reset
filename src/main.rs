@@ -1,4 +1,5 @@
 use std::io::stdin;
+
 use crate::reset::Resetter;
 use crate::reset::windows::WindowsResetter;
 
@@ -19,15 +20,19 @@ but that's okay, you should log out and press the start trial button again and y
 fn main() {
     // todo implement some sorta menu or something
     println!("{GUIDE}");
-    
+
     let mut input = String::new();
 
     println!("Press Enter to continue...");
-    
+
     stdin().read_line(&mut input).expect("Pressed wrong button");
 
     match std::env::consts::OS {
         "windows" => reset(&WindowsResetter),
         _ => println!("Your OS is not supported just yet.")
     }
+
+    println!("Press Enter to exit...");
+
+    stdin().read_line(&mut input).expect("Pressed wrong button");
 }
